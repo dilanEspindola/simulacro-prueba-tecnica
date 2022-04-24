@@ -1,0 +1,73 @@
+.listado {
+  padding: 50px 20px;
+}
+
+.listado h1 {
+  text-align: center;
+}
+
+.productos {
+  margin: 40px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.producto {
+  box-shadow: 0px 7px 44px -7px rgba(0, 0, 0, 0.1),
+    0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: #fff;
+}
+
+.producto .img {
+  position: relative;
+}
+
+.producto img {
+  width: 100%;
+  height: 300px;
+}
+.producto .img:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.producto p.fabricador {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: #000;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.producto p.nombre-grafica {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  color: #fff;
+  background: rgba(0, 0, 0);
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.producto button {
+  width: 30%;
+  border: none;
+  background: rgb(145, 34, 34);
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
