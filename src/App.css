@@ -2,3 +2,9 @@
   background: rgb(224, 224, 224);
   min-height: 100vh;
 }
+
+.loading {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}

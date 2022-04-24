@@ -3,11 +3,13 @@ import { GetData } from "../services/GetData";
 import { url } from "../utils/url";
 import Loading from "./Loading";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const ListadoProductos = () => {
   const [productos, setProductos] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const showData = () => {
     setTimeout(() => {
@@ -15,12 +17,14 @@ export const ListadoProductos = () => {
         .then((data) => setProductos(data))
         .catch((error) => setError(error.message));
       setLoading(false);
-    }, 200);
+    }, 100);
   };
 
   useEffect(() => {
     showData();
   }, []);
+
+  const sendToProductoPage = (id) => navigate(`/${id}`);
 
   const deleteProduct = (id) => {
     axios
@@ -48,9 +52,14 @@ export const ListadoProductos = () => {
               </div>
               <p className="fabricador">{producto.fabricador}</p>
               <p className="nombre-grafica">{producto.nombreGrafica}</p>
-              <button onClick={() => deleteProduct(producto.id)}>
-                Eliminar
-              </button>
+              <div className="buttons">
+                <button onClick={() => deleteProduct(producto.id)}>
+                  Eliminar
+                </button>
+                <button onClick={() => sendToProductoPage(producto.id)}>
+                  Ver
+                </button>
+              </div>
             </div>
           ))}
       </div>
